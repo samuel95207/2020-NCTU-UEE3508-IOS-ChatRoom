@@ -1,0 +1,11 @@
+{
+  "commitish" : "v13.3.0",
+  "iOS" : [
+    {
+      "hash" : "c8b5d612bb756b9dba167e5149adb2acfca26289403ed4912b2ceb866c8d1376",
+      "name" : "SocketIO",
+      "linking" : "dynamic",
+      "swiftToolchainVersion" : "5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)"
+    }
+  ]
+}

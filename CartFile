@@ -1,0 +1,2 @@
+github "daltoniam/Starscream" == 3.0.2
+github "socketio/socket.io-client-swift" == 13.3.0

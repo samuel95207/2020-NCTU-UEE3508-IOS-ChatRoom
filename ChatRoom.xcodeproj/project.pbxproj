@@ -13,7 +13,25 @@
 		A641D75A254A668300E67CFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A641D758254A668300E67CFD /* Main.storyboard */; };
 		A641D75C254A668300E67CFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A641D75B254A668300E67CFD /* Assets.xcassets */; };
 		A641D75F254A668300E67CFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A641D75D254A668300E67CFD /* LaunchScreen.storyboard */; };
+		A6568976254C282F00D76710 /* SocketIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6568974254C282E00D76710 /* SocketIO.framework */; };
+		A6568977254C282F00D76710 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6568975254C282F00D76710 /* Starscream.framework */; };
+		A656897A254C289A00D76710 /* SocketIO.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6568974254C282E00D76710 /* SocketIO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A656897B254C28A000D76710 /* Starscream.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6568975254C282F00D76710 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A6568979254C288100D76710 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A656897B254C28A000D76710 /* Starscream.framework in CopyFiles */,
+				A656897A254C289A00D76710 /* SocketIO.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A641D74F254A668300E67CFD /* ChatRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +42,8 @@
 		A641D75B254A668300E67CFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A641D75E254A668300E67CFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A641D760254A668300E67CFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6568974254C282E00D76710 /* SocketIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketIO.framework; path = Carthage/Build/iOS/SocketIO.framework; sourceTree = SOURCE_ROOT; };
+		A6568975254C282F00D76710 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6568976254C282F00D76710 /* SocketIO.framework in Frameworks */,
+				A6568977254C282F00D76710 /* Starscream.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +78,8 @@
 		A641D751254A668300E67CFD /* ChatRoom */ = {
 			isa = PBXGroup;
 			children = (
+				A6568974254C282E00D76710 /* SocketIO.framework */,
+				A6568975254C282F00D76710 /* Starscream.framework */,
 				A641D752254A668300E67CFD /* AppDelegate.swift */,
 				A641D754254A668300E67CFD /* SceneDelegate.swift */,
 				A641D756254A668300E67CFD /* ViewController.swift */,
@@ -77,6 +101,7 @@
 				A641D74B254A668300E67CFD /* Sources */,
 				A641D74C254A668300E67CFD /* Frameworks */,
 				A641D74D254A668300E67CFD /* Resources */,
+				A6568979254C288100D76710 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -284,6 +309,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ChatRoom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,6 +330,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ChatRoom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
