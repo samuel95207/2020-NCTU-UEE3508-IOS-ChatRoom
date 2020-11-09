@@ -1,3 +1,5 @@
+// swift-tools-version:5.2
+
 //
 //  Package.Swift
 //  Starscream
@@ -21,12 +23,17 @@
 import PackageDescription
 
 let package = Package(
-    name: "Starscream",
-    dependencies: [
-        .Package(url: "https://github.com/daltoniam/zlib-spm.git",
-    majorVersion: 1, minor: 1),
-        .Package(url: "https://github.com/daltoniam/common-crypto-spm",
-                 majorVersion: 1, minor: 1),
+        name: "Starscream",
+        products: [
+            .library(name: "Starscream", targets: ["Starscream"])
         ],
-    exclude: ["Tests", "examples"]
+        dependencies: [],
+        targets: [
+            .target(name: "Starscream",
+                    path: "Sources")
+        ]
 )
+
+#if os(Linux)
+    package.dependencies.append(.package(url: "https://github.com/apple/swift-nio-zlib-support.git", from: "1.0.0"))
+#endif

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,10 +13,7 @@
 		A641D75A254A668300E67CFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A641D758254A668300E67CFD /* Main.storyboard */; };
 		A641D75C254A668300E67CFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A641D75B254A668300E67CFD /* Assets.xcassets */; };
 		A641D75F254A668300E67CFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A641D75D254A668300E67CFD /* LaunchScreen.storyboard */; };
-		A6568976254C282F00D76710 /* SocketIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6568974254C282E00D76710 /* SocketIO.framework */; };
-		A6568977254C282F00D76710 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6568975254C282F00D76710 /* Starscream.framework */; };
-		A656897A254C289A00D76710 /* SocketIO.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6568974254C282E00D76710 /* SocketIO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A656897B254C28A000D76710 /* Starscream.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6568975254C282F00D76710 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A65689812553BAB600D76710 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = A65689802553BAB600D76710 /* SocketIO */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,8 +23,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A656897B254C28A000D76710 /* Starscream.framework in CopyFiles */,
-				A656897A254C289A00D76710 /* SocketIO.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,8 +37,6 @@
 		A641D75B254A668300E67CFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A641D75E254A668300E67CFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A641D760254A668300E67CFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6568974254C282E00D76710 /* SocketIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketIO.framework; path = Carthage/Build/iOS/SocketIO.framework; sourceTree = SOURCE_ROOT; };
-		A6568975254C282F00D76710 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6568976254C282F00D76710 /* SocketIO.framework in Frameworks */,
-				A6568977254C282F00D76710 /* Starscream.framework in Frameworks */,
+				A65689812553BAB600D76710 /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,8 +70,6 @@
 		A641D751254A668300E67CFD /* ChatRoom */ = {
 			isa = PBXGroup;
 			children = (
-				A6568974254C282E00D76710 /* SocketIO.framework */,
-				A6568975254C282F00D76710 /* Starscream.framework */,
 				A641D752254A668300E67CFD /* AppDelegate.swift */,
 				A641D754254A668300E67CFD /* SceneDelegate.swift */,
 				A641D756254A668300E67CFD /* ViewController.swift */,
@@ -108,6 +98,9 @@
 			dependencies = (
 			);
 			name = ChatRoom;
+			packageProductDependencies = (
+				A65689802553BAB600D76710 /* SocketIO */,
+			);
 			productName = ChatRoom;
 			productReference = A641D74F254A668300E67CFD /* ChatRoom.app */;
 			productType = "com.apple.product-type.application";
@@ -135,6 +128,9 @@
 				Base,
 			);
 			mainGroup = A641D746254A668300E67CFD;
+			packageReferences = (
+				A656897F2553BAB600D76710 /* XCRemoteSwiftPackageReference "socket" */,
+			);
 			productRefGroup = A641D750254A668300E67CFD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -368,6 +364,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A656897F2553BAB600D76710 /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A65689802553BAB600D76710 /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A656897F2553BAB600D76710 /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A641D747254A668300E67CFD /* Project object */;
 }
